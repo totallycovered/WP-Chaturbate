@@ -10,8 +10,8 @@
 				'append'		=> 'append_import',
                 'formname' 		=> 'nmp_import',
 				'subformname' 	=> '',
-                'title' 		=> __( ' Import Cams', THEMENAME ),
-                'description' 	=> __( '', THEMENAME ), 
+                'title' 		=> __( ' Import Cams', 'THEMENAME' ),
+                'description' 	=> __( '', 'THEMENAME' ), 
                 'groups'	 	=> array(
 				
 				// General Settings...
@@ -19,8 +19,8 @@
 					array (
 						'before' 			=> '<div class="import_subpanel">',
 						'after' 			=> '</div>',						
-						'title' 			=> __( 'Import Cams', THEMENAME ),    
-						'description' 		=> __( 'Imports the Chaturbate XML Feed ( be patient, it may take a few minutes to complete)<br /> The plugin is also set to automatically import once every 30 minutes.', THEMENAME ), 
+						'title' 			=> __( 'Import Cams', 'THEMENAME' ),    
+						'description' 		=> __( 'Imports the Chaturbate XML Feed ( be patient, it may take a few minutes to complete)<br /> The plugin is also set to automatically import once every 30 minutes.', 'THEMENAME' ), 
 						'preview'			=> NULL,
 						'fields' 			=> array(
 							
@@ -53,7 +53,7 @@
 		
 		// The XML Feed URL
 		
-			$xml = 'http://' . $cb_wl . '/affiliates/api/onlinerooms/?format=xml&wm='. $cb_affid .'';	
+			$xml = 'https://' . $cb_wl . '/affiliates/api/onlinerooms/?format=xml&wm='. $cb_affid .'';	
 		
 		// Fetch the feed
 		
@@ -70,17 +70,17 @@
 
 					switch ( $cam->gender) {
 						
-						case f:
+						case 'f':
 							$gender = 'female';
 							break;
-						case m:
+						case 'm':
 							$gender = 'male';
 							break;
-						case c:
+						case 'c':
 							$gender = 'couple';
 							break;
-						case s:
-							$gender = 'shemale';
+						case 's':
+							$gender = 'trans';
 							break;
 						default:
 							$gender = '';
@@ -120,7 +120,7 @@
 						// Insert Post
 							
 							$my_post = array(
-								'ID'			=> $post_id[ID],
+								'ID'			=> $post_id['ID'],
 								'post_title' 	=> $cam->username,
 								'post_status' 	=> 'publish',
 								'post_type' 	=> 'webcam'
@@ -130,32 +130,32 @@
 
 						// Add Meta Data
 							
-							update_post_meta($post_id[ID], '_cb_age', $age);
-							update_post_meta($post_id[ID], '_cb_birthdate', ''.$cam->birthday.'');
-							update_post_meta($post_id[ID], '_cb_camuser', ''.$cam->username.'');
-							update_post_meta($post_id[ID], '_cb_displayname', ''.$cam->display_name.'');
-							update_post_meta($post_id[ID], '_cb_iframe_revshare', ''.$cam->iframe_embed_revshare.'');
-							update_post_meta($post_id[ID], '_cb_iframe_signup', ''.$cam->iframe_embed.'');
-							update_post_meta($post_id[ID], '_cb_image', ''.$cam->image_url.'');
-							update_post_meta($post_id[ID], '_cb_gender', $gender );
-							update_post_meta($post_id[ID], '_cb_online', $online );
-							update_post_meta($post_id[ID], '_cb_language', ''.$cam->spoken_languages.'');
-							update_post_meta($post_id[ID], '_cb_location', ''.$cam->location.'');
-							update_post_meta($post_id[ID], '_cb_recorded', ''.$cam->recorded.'');
-							update_post_meta($post_id[ID], '_cb_show', ''.$cam->current_show.'');
-							update_post_meta($post_id[ID], '_cb_users', $viewers);
-							update_post_meta($post_id[ID], '_cb_chat_url', ''.$cam->chat_room_url.'');
-							update_post_meta($post_id[ID], '_cb_chat_url_rev', ''.$cam->chat_room_url_revshare.'');
+							update_post_meta($post_id['ID'], '_cb_age', $age);
+							update_post_meta($post_id['ID'], '_cb_birthdate', ''.$cam->birthday.'');
+							update_post_meta($post_id['ID'], '_cb_camuser', ''.$cam->username.'');
+							update_post_meta($post_id['ID'], '_cb_displayname', ''.$cam->display_name.'');
+							update_post_meta($post_id['ID'], '_cb_iframe_revshare', ''.$cam->iframe_embed_revshare.'');
+							update_post_meta($post_id['ID'], '_cb_iframe_signup', ''.$cam->iframe_embed.'');
+							update_post_meta($post_id['ID'], '_cb_image', ''.$cam->image_url.'');
+							update_post_meta($post_id['ID'], '_cb_gender', $gender );
+							update_post_meta($post_id['ID'], '_cb_online', $online );
+							update_post_meta($post_id['ID'], '_cb_language', ''.$cam->spoken_languages.'');
+							update_post_meta($post_id['ID'], '_cb_location', ''.$cam->location.'');
+							update_post_meta($post_id['ID'], '_cb_recorded', ''.$cam->recorded.'');
+							update_post_meta($post_id['ID'], '_cb_show', ''.$cam->current_show.'');
+							update_post_meta($post_id['ID'], '_cb_users', $viewers);
+							update_post_meta($post_id['ID'], '_cb_chat_url', ''.$cam->chat_room_url.'');
+							update_post_meta($post_id['ID'], '_cb_chat_url_rev', ''.$cam->chat_room_url_revshare.'');
 								
 						// Set Terms
 
-							wp_set_object_terms( $post_id[ID], array( $gender, 'all'), 'gender' );
+							wp_set_object_terms( $post_id['ID'], array( $gender, 'all'), 'gender' );
 							
 							if ( $asiansFound )						
-								wp_set_object_terms( $post_id[ID], array( 'Asian'), 'ethnicity' );
+								wp_set_object_terms( $post_id['ID'], array( 'Asian'), 'ethnicity' );
 								
 							if ( $latinasFound )						
-								wp_set_object_terms( $post_id[ID], array( 'Latin'), 'ethnicity' );								
+								wp_set_object_terms( $post_id['ID'], array( 'Latin'), 'ethnicity' );								
 
 					} else {
 					
@@ -187,17 +187,18 @@
 							update_post_meta($post_id, '_cb_show', ''.$cam->current_show.'');
 							update_post_meta($post_id, '_cb_users', $viewers);
 							update_post_meta($post_id, '_cb_chat_url', ''.$cam->chat_room_url.'');
-							update_post_meta($post_id, '_cb_chat_url_rev', ''.$cam->chat_room_url_revshare.'');						
+							update_post_meta($post_id, '_cb_chat_url_rev', ''.$cam->chat_room_url_revshare.'');	
+							update_post_meta($post_id, '_cb_is_new', $is_new);
 								
 						// Set Terms
 
 							wp_set_object_terms( $post_id, array( $gender, 'all'), 'gender' );
 							
 							if ( $asiansFound )						
-								wp_set_object_terms( $post_id[ID], array( 'Asian'), 'ethnicity' );
+								wp_set_object_terms( $post_id['ID'], array( 'Asian'), 'ethnicity' );
 								
 							if ( $latinasFound )						
-								wp_set_object_terms( $post_id[ID], array( 'Latin'), 'ethnicity' );								
+								wp_set_object_terms( $post_id['ID'], array( 'Latin'), 'ethnicity' );								
 
 					}
 

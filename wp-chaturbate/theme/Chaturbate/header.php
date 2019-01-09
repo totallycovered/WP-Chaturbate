@@ -1,6 +1,16 @@
 <!DOCTYPE HTML>
 <html <?php language_attributes(); ?>>
 	<head>
+		<!-- Global site tag (gtag.js) - Google Analytics -->
+		<script async src="https://www.googletagmanager.com/gtag/js?id=UA-104682223-2"></script>
+		<script>
+  			window.dataLayer = window.dataLayer || [];
+  			function gtag(){dataLayer.push(arguments);}
+  			gtag('js', new Date());
+
+  			gtag('config', 'UA-104682223-2');
+		</script>
+
 		<title>
 			<?php
 				global $page, $paged;
@@ -26,10 +36,11 @@
 		<link rel="profile" href="http://gmpg.org/xfn/11" />
 		<link rel="pingback" href="<?php bloginfo( 'pingback_url' ); ?>" />
 		
-		<?php
+		<!--<?php
 			if ( $nmp_favicon ) // Show favicon if it exists
 				echo '<link rel="icon" type="image/png" href="' . $nmp_favicon . '" />';
 		?>
+		-->
 		
 		<link href='http://fonts.googleapis.com/css?family=Source+Sans+Pro:400,200,300,600,700' rel='stylesheet' type='text/css' />
 		
@@ -60,7 +71,7 @@
 				</div>
 							
 				<p><?php echo bloginfo('description'); ?></p>
-				<a href="http://nomoneyinporn.org/chaturbate-wordpress-theme/" class="button">Download it FREE</a>
+				<a href="https://chaturbate.com/in/?track=camaddict&tour=NwNd&campaign=AN7qv" class="button">Join for FREE</a>
 						
 			</div>	
 				

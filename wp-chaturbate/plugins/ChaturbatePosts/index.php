@@ -1,11 +1,11 @@
 <?php
 /*
 Plugin Name: Chaturbate Posts
-Plugin URI: https://nomoneyinporn.org
+Plugin URI: https://camaddict.net
 Description: Imports the Chaturbate XML Feed as a custom post type.
-Version: 1.0
-Author: Hillipino
-Author URI: http://nomoneyinporn.org
+Version: 2.0
+Author: Cornbread
+Author URI: http://camaddict.net
 License: GPL2
 
 This program is free software; you can redistribute it and/or modify
@@ -40,20 +40,20 @@ Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA  02110-1301  USA
 	
 	// Defaults
 	
-		define ( 'PLUGINNAME',		'Chaturbate' );
-		define ( 'USER',			'blogbabes' );						
-		define ( 'AFFID',			'827SM' );
+		define ( 'PLUGINNAME',			'Chaturbate' );
+		define ( 'USER',			'mrstuntcock' );						
+		define ( 'AFFID',			'AN7qv' );
 		define ( 'TRACK',			'NMPTHEME' );	
 		define ( 'MODE',			'revshare' );
 		define ( 'ROOM',			'top' );	
 		define ( 'CBWL',			'chaturbate.com' );
-		define ( 'RELATED_TITLE',	'More Free Cams' );
+		define ( 'RELATED_TITLE',		'More Free Cams' );
 		
     // Navigation / Pagination
     
 		define ( 'NMP_PAGINATE_RANGE', 				'2' );													// pagination range
-		define ( 'NMP_PAGINATE_PREV', 				__( 'Previous', THEMENAME ) );							// pagination previous text
-		define ( 'NMP_PAGINATE_NEXT', 				__( 'Next', THEMENAME ) );								// pagination next text
+		define ( 'NMP_PAGINATE_PREV', 				__( 'Previous', 'THEMENAME' ) );							// pagination previous text
+		define ( 'NMP_PAGINATE_NEXT', 				__( 'Next', 'THEMENAME' ) );								// pagination next text
 		define ( 'NMP_PAGINATE_BEFORE', 				'<div class="paged">' );								// pagination previous text
 		define ( 'NMP_PAGINATE_AFTER', 				'</div>' );												// pagination next text		
 			

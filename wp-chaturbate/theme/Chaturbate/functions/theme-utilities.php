@@ -157,7 +157,7 @@
 					if (get_magic_quotes_gpc())
 						$x = stripslashes($x);
 				 
-					$x = mysql_real_escape_string($x);	
+					//$x = mysql_real_escape_string($x);	
 					
 					return $x; 
 				

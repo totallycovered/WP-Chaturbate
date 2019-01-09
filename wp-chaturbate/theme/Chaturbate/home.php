@@ -21,7 +21,7 @@
 		if ( $cb_sort == 'paging' ) {
 			$ppp = 25;
 		} else {
-			$ppp = -1;
+			$ppp = 50;
 		}
 		
 		$zero = 0;
@@ -36,11 +36,11 @@
 				'value' => $zero,
 				'compare' => '!='
 			),
-			array(
-				'key' => '_cb_gender',
-				'value' => 'female',
-				'compare' => 'LIKE'
-			)
+			/* array(
+				'key' => '_cb_is_new',
+				'value' => FALSE,
+				'compare' => '!='
+			) */
 		),		
 		'order'				=> 'ASC'
 		);
@@ -54,8 +54,8 @@
 
 			echo '
 				<section class="nmp_post 404">
-					<h2>Not Found</h2>
-					<p>Apologies, but no results were found for the requested archive. Perhaps searching will help find a related post.</p>
+					<h2>Please try refreshing the page</h2>
+					<p>The server may be busy with your request. Please try again.</p>
 				</section>
 			';
 			
@@ -70,7 +70,7 @@
 						<div class="video">
 			';
 		
-			nmp_featured( $cb_mode, $cb_room, $cb_wl, $cb_affid, $cb_track, $cb_user, 300  );
+			nmp_featured( $cb_mode, $cb_room, $cb_wl, $cb_affid, $cb_campaign, $cb_user, 300  );
 			
 			echo '
 						</div>
@@ -78,13 +78,13 @@
 				</section>
 			';
 			
-			if ( function_exists( wp_show_currently_watching ) )
+			if ( function_exists( 'wp_show_currently_watching' ) )
 				wp_show_currently_watching();		
 		
 			echo '
 				<article class="nmp_post">
 					<div class="heading">
-						<span>Newest Webcam Performers</span>
+						<span>More Webcams</span>
 					</div>				
 			';
 			
@@ -104,7 +104,7 @@
 												<li><a href="#" data-filter=".couple">Couple</i></a></li>
 												<li><a href="#" data-filter=".female">Female</a></li>
 												<li><a href="#" data-filter=".male">Male</a></li>
-												<li><a href="#" data-filter=".shemale">Shemale</a></li>
+												<li><a href="#" data-filter=".trans">Trans</a></li>
 											</ul>
 										</div>
 									</div>
@@ -149,7 +149,7 @@
 												<li><a href="' . home_url() . '/webcams/couple/">Couple</i></a></li>
 												<li><a href="' . home_url() . '/webcams/female/">Female</a></li>
 												<li><a href="' . home_url() . '/webcams/male/">Male</a></li>
-												<li><a href="' . home_url() . '/webcams/shemale/">Shemale</a></li>
+												<li><a href="' . home_url() . '/webcams/trans/">Trans</a></li>
 											</ul>
 										</div>
 									</div>	
@@ -197,6 +197,7 @@
 					$cb_recorded 			= trim( get_post_meta( get_the_ID(), '_cb_recorded', TRUE ) );		// recorded: "true" or "false".
 					$cb_chaturl 			= trim( get_post_meta( get_the_ID(), '_cb_chat_url', TRUE ) );
 					$cb_chaturl_rev 		= trim( get_post_meta( get_the_ID(), '_cb_chat_url_rev', TRUE ) );
+					$cb_is_new 				= trim( get_post_meta( get_the_ID(), '_cb_is_new', TRUE ) ); 
 					
 					if ( !$cb_camuser || $cb_camuser == '' ) { $cb_camuser = ''; }
 					if ( !$cb_displayname || $cb_displayname == '' ) { $cb_displayname = ''; }
@@ -213,7 +214,8 @@
 					if ( !$cb_show || $cb_show == '' ) { $cb_show = ''; }
 					if ( !$cb_recorded || $cb_recorded == '' ) { $cb_recorded = ''; }
 					if ( !$cb_chaturl || $cb_chaturl == '' ) { $cb_chaturl = ''; }
-					if ( !$cb_chaturl_rev || $cb_chaturl_rev == '' ) { $cb_chaturl_rev = ''; }			
+					if ( !$cb_chaturl_rev || $cb_chaturl_rev == '' ) { $cb_chaturl_rev = ''; }	
+					if ( !$cb_is_new || $cb_is_new == '' ) { $cb_is_new = TRUE; }
 				
 				// Determine how to display the cams.
 					
@@ -253,7 +255,7 @@
 					<div class="clearfix"></div>
 						<section class="cb_pager">';
 						
-						if ( function_exists( nmp_paginate ) ) {
+						if ( function_exists( 'nmp_paginate' ) ) {
 							
 							//nmp_paginate();
 						

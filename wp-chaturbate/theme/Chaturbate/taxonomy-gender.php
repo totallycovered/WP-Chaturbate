@@ -60,7 +60,7 @@
 												<li><a href="' . home_url() . '/webcams/couple/">Couple</i></a></li>
 												<li><a href="' . home_url() . '/webcams/female/">Female</a></li>
 												<li><a href="' . home_url() . '/webcams/male/">Male</a></li>
-												<li><a href="' . home_url() . '/webcams/shemale/">Shemale</a></li>
+												<li><a href="' . home_url() . '/webcams/trans/">Trans</a></li>
 											</ul>
 										</div>
 									</div>
@@ -105,7 +105,7 @@
 												<li><a href="' . home_url() . '/webcams/couple/">Couple</i></a></li>
 												<li><a href="' . home_url() . '/webcams/female/">Female</a></li>
 												<li><a href="' . home_url() . '/webcams/male/">Male</a></li>
-												<li><a href="' . home_url() . '/webcams/shemale/">Shemale</a></li>
+												<li><a href="' . home_url() . '/webcams/trans/">Trans</a></li>
 											</ul>
 										</div>
 									</div>	

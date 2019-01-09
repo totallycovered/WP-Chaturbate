@@ -27,20 +27,20 @@
 			
 				switch ( $mode ) {
 					
-					case signup: 	//signup mode
+					case 'signup': 	//signup mode
 					
 						switch ( $room ) {
 							
-							case personal:
+							case 'personal':
 								$go = 'Jrvi';
 								break;
-							case top:
+							case 'top':
 								$go = 'NxHf';
 								break;								
-							case male:
+							case 'male':
 								$go = 'SKWo';
 								break;								
-							case transexual:
+							case 'transexual':
 								$go = 'JXvq';
 								break;	
 								
@@ -52,16 +52,16 @@
 
 						switch ( $room ) {
 							
-							case personal:
+							case 'personal':
 								$go = '9oGW';
 								break;
-							case top:
+							case 'top':
 								$go = 'dTm0';
 								break;								
-							case male:
+							case 'male':
 								$go = 'CoeM';
 								break;								
-							case transexual:
+							case 'transexual':
 								$go = 'zoQq';
 								break;	
 								
@@ -141,6 +141,7 @@
 								$cb_recorded 			= trim( get_post_meta( get_the_ID(), '_cb_recorded', TRUE ) );		// recorded: "true" or "false".
 								$cb_chaturl 			= trim( get_post_meta( get_the_ID(), '_cb_chat_url', TRUE ) );
 								$cb_chaturl_rev 		= trim( get_post_meta( get_the_ID(), '_cb_chat_url_rev', TRUE ) );
+								$cb_is_new 				= trim( get_post_meta( get_the_ID(), '_cb_is_new', TRUE ) );
 								
 								if ( !$cb_camuser || $cb_camuser == '' ) { $cb_camuser = ''; }
 								if ( !$cb_displayname || $cb_displayname == '' ) { $cb_displayname = ''; }
@@ -157,7 +158,8 @@
 								if ( !$cb_show || $cb_show == '' ) { $cb_show = ''; }
 								if ( !$cb_recorded || $cb_recorded == '' ) { $cb_recorded = ''; }
 								if ( !$cb_chaturl || $cb_chaturl == '' ) { $cb_chaturl = ''; }
-								if ( !$cb_chaturl_rev || $cb_chaturl_rev == '' ) { $cb_chaturl_rev = ''; }			
+								if ( !$cb_chaturl_rev || $cb_chaturl_rev == '' ) { $cb_chaturl_rev = ''; }	
+								if ( !$cb_is_new || $cb_is_new == '' ) { $cb_is_new = 0; }								
 
 								
 								// Get Permalink

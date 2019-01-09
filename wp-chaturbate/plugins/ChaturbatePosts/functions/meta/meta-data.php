@@ -2,7 +2,7 @@
 
 // Register meta boxes
 
-	$prefix = _cb_;
+	$prefix = '_cb_';
 
 	$meta_boxes = array();
 
@@ -11,7 +11,7 @@
 	
 	$meta_boxes[] = array(
 		'id' 			=> 'webcam_meta',
-		'title' 		=> __( 'Webcam Options', THEMENAME ),
+		'title' 		=> __( 'Webcam Options', 'THEMENAME' ),
 		'pages' 		=> array('webcam'),
 		'template'		=> '',
 		'context' 		=> 'normal', // normal, advanced, side (optional)
@@ -21,7 +21,7 @@
 			// Performer Username 
 			
 				array(
-					'name' 		=> __( 'Performer Username', THEMENAME ),
+					'name' 		=> __( 'Performer Username', 'THEMENAME' ),
 					'desc' 		=> '',
 					'id' 		=> $prefix . 'camuser',
 					'type' 		=> 'text',
@@ -31,7 +31,7 @@
 			// Performer Display Name 
 			
 				array(
-					'name' 		=> __( 'Performer Display Name', THEMENAME ),
+					'name' 		=> __( 'Performer Display Name', 'THEMENAME' ),
 					'desc' 		=> '',
 					'id' 		=> $prefix . 'displayname',
 					'type' 		=> 'text',
@@ -41,7 +41,7 @@
 			// Performer Age 
 			
 				array(
-					'name' 		=> __( 'Performer Age', THEMENAME ),
+					'name' 		=> __( 'Performer Age', 'THEMENAME' ),
 					'desc' 		=> '',
 					'id' 		=> $prefix . 'age',
 					'type' 		=> 'text',
@@ -51,7 +51,7 @@
 			// Program Mode
 							
 				array(
-					'name' 		=> __( 'Performer Gender', THEMENAME ),
+					'name' 		=> __( 'Performer Gender', 'THEMENAME' ),
 					'desc' 		=> '',
 					'id' 		=> $prefix . 'gender',
 					'type' 		=> 'radio',
@@ -60,14 +60,14 @@
 						array('name' => ' Female', 'value' => 'female'),
 						array('name' => ' Male', 'value' => 'male'),
 						array('name' => ' Couple', 'value' => 'couple'),
-						array('name' => ' Shemale', 'value' => 'shemale'),
+						array('name' => ' Trans', 'value' => 'trans'),
 					)								
 				),				
 
 			// Performer Birthdate 
 			
 				array(
-					'name' 		=> __( 'Performer Birthdate', THEMENAME ),
+					'name' 		=> __( 'Performer Birthdate', 'THEMENAME' ),
 					'desc' 		=> '',
 					'id' 		=> $prefix . 'birthdate',
 					'type' 		=> 'text',
@@ -77,7 +77,7 @@
 			// Performer Image 
 			
 				array(
-					'name' 		=> __( 'Performer Image', THEMENAME ),
+					'name' 		=> __( 'Performer Image', 'THEMENAME' ),
 					'desc' 		=> '',
 					'id' 		=> $prefix . 'image',
 					'type' 		=> 'text',
@@ -87,7 +87,7 @@
 			// Performer Location 
 			
 				array(
-					'name' 		=> __( 'Performer Location', THEMENAME ),
+					'name' 		=> __( 'Performer Location', 'THEMENAME' ),
 					'desc' 		=> '',
 					'id' 		=> $prefix . 'location',
 					'type' 		=> 'text',
@@ -97,7 +97,7 @@
 			// Performer Language
 			
 				array(
-					'name' 		=> __( 'Performer Language', THEMENAME ),
+					'name' 		=> __( 'Performer Language', 'THEMENAME' ),
 					'desc' 		=> '',
 					'id' 		=> $prefix . 'language',
 					'type' 		=> 'text',
@@ -107,7 +107,7 @@
 			// Iframe Revshare
 			
 				array(
-					'name' 		=> __( 'Revshare Iframe', THEMENAME ),
+					'name' 		=> __( 'Revshare Iframe', 'THEMENAME' ),
 					'desc' 		=> '',
 					'id' 		=> $prefix . 'iframe_revshare',
 					'type' 		=> 'text',
@@ -117,13 +117,22 @@
 			// Iframe Signup
 			
 				array(
-					'name' 		=> __( 'Signup Iframe', THEMENAME ),
+					'name' 		=> __( 'Signup Iframe', 'THEMENAME' ),
 					'desc' 		=> '',
 					'id' 		=> $prefix . 'iframe_signup',
 					'type' 		=> 'text',
 					'std' 		=> ''
 				),	
 				
+			// Is New
+
+				array(
+					'name'		=> __( 'New Model', 'THEMENAME' ),
+					'desc'		=> '',
+					'id'		=> $prefix . 'is_new',
+					'type'		=> 'text',
+					'std'		=> 'False'
+				),
 		)
 	);
 	

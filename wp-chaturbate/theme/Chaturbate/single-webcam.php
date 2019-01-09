@@ -35,6 +35,7 @@
 		$cb_recorded 			= trim( get_post_meta( get_the_ID(), '_cb_recorded', TRUE ) );		// recorded: "true" or "false".
 		$cb_chaturl 			= trim( get_post_meta( get_the_ID(), '_cb_chat_url', TRUE ) );
 		$cb_chaturl_rev 		= trim( get_post_meta( get_the_ID(), '_cb_chat_url_rev', TRUE ) );
+		$cb_is_new				= trim( get_post_meta( get_the_ID(), '_cb_is_new', TRUE ) );
 		
 		if ( !$cb_camuser || $cb_camuser == '' ) { $cb_camuser = ''; }
 		if ( !$cb_displayname || $cb_displayname == '' ) { $cb_displayname = ''; }
@@ -52,6 +53,7 @@
 		if ( !$cb_recorded || $cb_recorded == '' ) { $cb_recorded = ''; }
 		if ( !$cb_chaturl || $cb_chaturl == '' ) { $cb_chaturl = ''; }
 		if ( !$cb_chaturl_rev || $cb_chaturl_rev == '' ) { $cb_chaturl_rev = ''; }
+		if ( !$cb_is_new || $cb_is_new == '' ) { $cb_is_new = ''; }
 			
 	// The Post
 			
@@ -130,6 +132,11 @@
 				</div>
 			</div>
 	';
+
+///////
+// irc chat
+///////
+echo '<iframe src="http://irc.camaddict.net/camaddict.net?realname=' . $cb_camuser . '" style="width: 100%; height: 400px;"></iframe>';
 	
 	
 		if ( $cb_online == 0 ) {
@@ -219,7 +226,7 @@
 	// The Content
 	//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 	
-		the_content();	
+		//the_content();	
 						
 	//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 	// Show Related Posts

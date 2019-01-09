@@ -38,7 +38,7 @@
 					echo '
 						<script>
 							jQuery(function() {				
-								jQuery(\'.append_import\').prepend(\'<p class="updated">' . __( 'Feed Successfully Imported', THEMENAME ) . '</p>\'); 
+								jQuery(\'.append_import\').prepend(\'<p class="updated">' . __( 'Feed Successfully Imported', 'THEMENAME' ) . '</p>\'); 
 								jQuery(\'.tab_import\').addClass(\'initial\');
 							});		
 						</script>
@@ -136,7 +136,7 @@
 							<li>
 								<form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_blank">
 								<input type="hidden" name="cmd" value="_s-xclick">
-								<input type="hidden" name="hosted_button_id" value="8QDFK45CF3UUU">
+								<input type="hidden" name="hosted_button_id" value="WQTNGRRDLB782">
 								<input type="image" src="https://www.paypalobjects.com/en_US/i/btn/btn_donate_SM.gif" border="0" name="submit" alt="PayPal - The safer, easier way to pay online!">
 								<img alt="" border="0" src="https://www.paypalobjects.com/en_US/i/scr/pixel.gif" width="1" height="1">
 								</form>							
@@ -164,8 +164,8 @@
 				'append'		=> 'append_dashboard',
                 'formname' 		=> 'nmp_dashboard',
 				'subformname' 	=> '',
-                'title' 		=> __( ' Dashboard', THEMENAME ),
-                'description' 	=> __( '', THEMENAME ), 
+                'title' 		=> __( ' Dashboard', 'THEMENAME' ),
+                'description' 	=> __( '', 'THEMENAME' ), 
                 'groups'	 	=> array(
 				
 				// General Settings...
@@ -173,7 +173,7 @@
 					array (
 						'before' 			=> '<div class="cache_subpanel">',
 						'after' 			=> '</div>',						
-						'title' 			=> __( 'Chaturbate Posts Plugin by nomoneyinporn.org', PLUGINNAME ),    
+						'title' 			=> __( 'Chaturbate Posts Plugin for CamAddict.net', PLUGINNAME ),    
 						'description' 		=> '', 
 						'preview'			=> NULL,
 						'fields' 			=> array(
@@ -570,19 +570,8 @@
 							echo '
 							
 								<p>
-									The first thing you will need to do for this plugin to make any sense is create a <a href="http://chaturbate.com/affiliates/in/07kX/827SM/?track=default" target="_blank"><strong>Chaturbate Affiliate Account</strong></a>.
-									If you have one already just move on to the next step.
-								</p>
-								
-								<p>
-									The second thing you will need to do is configure the settings for the plugin, otherwise I will get credit for all of your referrals! Feel free to forget this step, I won\'t complain :). To configure the settings, just hit the settings tab to the left.
-								</p>
-								
-								<p>
-									Last but not least, click the import tab and import the feed. It will probably take a few minutes to complete. The plugin is scheduled to auto import every 30 minutes.
-								</p>
-								
-								<p>Feel free to customize or modify this plugin as you see fit. If you do happen to add something cool, I would love to have a copy! </p>
+									You will need a <a href="http://chaturbate.com/affiliates/in/07kX/AN7qv/?track=default" target="_blank"><strong>Chaturbate Affiliate Account</strong></a>.
+									
 													
 							
 							';
@@ -608,7 +597,7 @@
 			
 			if ( $args[ 'formname' ] == 'nmp_import' ) {
 			
-				$input_text = __( 'Import', THEMENAME);
+				$input_text = __( 'Import', 'THEMENAME');
 	
 			} else {			
 				

@@ -46,3 +46,4 @@
 			wp_clear_scheduled_hook( 'nmp_halfhourly_event' );
 		}	
 		
+	

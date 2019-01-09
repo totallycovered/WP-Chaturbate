@@ -1,9 +1,9 @@
 === Plugin Name ===
-Contributors: freephpdotnet
-Donate link: http://free-php.net/
+Contributors: CamAddict.Net
+Donate link: http://camaddict.net/
 Tags: custom taxonmy, widget
 Requires at least: 3.1
-Tested up to: 3.1
+Tested up to: 5.0.2
 Stable tag: trunk
 
 This is a simple widget to display your custom taxonomy items in your sidebar widgets.
@@ -21,5 +21,5 @@ This is a simple widget to display your custom taxonomy items in your sidebar wi
 
 == Changelog ==
 
-= 1.0 =
-* Initial Release
+= 2.0 =
+* Ripped Release

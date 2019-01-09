@@ -2,11 +2,11 @@
 
 /*
 Plugin Name: Chaturbate Widget
-Plugin URI: http://adultwpthemes.com/
-Description: A simple widget to display live cam feeds from Chaturbate - http://chaturbate.com/affiliates/in/9O7D/827SM/?track=chaturbatewidget.
-Author: Doni Ronquillo
-Version: 1
-Author URI: http://www.doni.us/
+Plugin URI: http://camaddict.net/
+Description: A simple widget to display live cam feeds from Chaturbate - http://chaturbate.com/affiliates/in/9O7D/AN7qv/?track=chaturbatewidget.
+Author: Cornbread
+Version: 2
+Author URI: http://camaddict.net
 License: GPL version 2 or later - http://www.gnu.org/licenses/old-licenses/gpl-2.0.html
 */
 
@@ -25,10 +25,10 @@ License: GPL version 2 or later - http://www.gnu.org/licenses/old-licenses/gpl-2
 class chaturbate_Widget extends WP_Widget {
 
   
-	function chaturbate_Widget() {
+	function __construct() {
 		$widgets_opt = array('classname' => 'chaturbate_Widget','description'=>'Live Cam Feed from Chaturbate');
-		//parent::WP_Widget(false,$name= "Live Cams",$widgets_opt);
-		$this->WP_Widget('chaturbate_Widget', 'Chaturbate Widget', $widgets_opt);
+		parent::__construct('chaturbate_Widget', 'Chaturbate Widget', $widgets_opt);
+		//$this->WP_Widget('chaturbate_Widget', 'Chaturbate Widget', $widgets_opt);
 	}
   
 	// User Options Form
@@ -48,7 +48,7 @@ class chaturbate_Widget extends WP_Widget {
 		//$cbTrack	= esc_attr($instance['cbTrack']);  	// Chaturbate Tracking Code
 		$cbRevenue	= esc_attr($instance['cbRevenue']);	// The Revenue method you would like to use ( Revshare, Per Signup )
 		//$cbLinkto	= esc_attr($instance['cbLinkto']);	// popup, page	
-		$cbSex		= esc_attr($instance['cbSex']);		// Which cams to show ( m = male, f = female, c = couple, s = shemale, a = all )		
+		$cbSex		= esc_attr($instance['cbSex']);		// Which cams to show ( m = male, f = female, c = couple, s = trans, a = all )		
 		$cbCount	= esc_attr($instance['cbCount']); 	// Items to show in widget
 		//$cbPaged	= esc_attr($instance['cbPaged']); 	// Show or hide pagination
 		//$cbAffil	= esc_attr($instance['cbAffil']); 	// Show affiliate signup link
@@ -62,7 +62,7 @@ class chaturbate_Widget extends WP_Widget {
 			</p>   
 	
 			<p>
-				<label for="<?php echo $this->get_field_id('cbAffid'); ?>">Chaturbate ID: <a href="http://chaturbate.com/affiliates/in/9O7D/827SM/?track=chaturbatewidget" target="_blank">Get One!</a></label>
+				<label for="<?php echo $this->get_field_id('cbAffid'); ?>">Chaturbate ID: <a href="http://chaturbate.com/affiliates/in/9O7D/AN7qv/?track=chaturbatewidget" target="_blank">Get One!</a></label>
 				<input id="<?php echo $this->get_field_id('cbAffid'); ?>" name="<?php echo $this->get_field_name('cbAffid'); ?>" type="text" class="widefat" value="<?php echo $cbAffid;?>" />
 			</p> 
 
@@ -127,7 +127,7 @@ class chaturbate_Widget extends WP_Widget {
 						echo '>Couples</option>';
 						echo '<option value="s"'; 
 							if ( $cbSex  == "s" ) { echo ' selected="selected" '; }
-						echo '>Shemales</option>';						
+						echo '>Trans</option>';						
 					?>
 				</select>
 			</p>			
@@ -167,7 +167,7 @@ class chaturbate_Widget extends WP_Widget {
 		// Default values if no option set.
 		
 		if ( $cbTitle == '' ) 	$cbTitle 	= 'Live Webcams';
-		if ( $cbAffid == '' ) 	$cbAffid	= '827SM';
+		if ( $cbAffid == '' ) 	$cbAffid	= 'AN7qv';
 		//if ( $cbTrack == '' )	$cbTrack	= 'chaturbatewidget';
 		if ( $cbRevenue == '' ) $cbRevenue 	= 'revshare';
 		//if ( $cbLinkto == '' ) 	$cbLinkto 	= 'popup';
@@ -272,7 +272,7 @@ class chaturbate_Widget extends WP_Widget {
 			
 		}
 		
-		echo '<li class="adultwp"><a href="http://www.adultwpthemes.com" target="_blank">Get this Widget</a></li>';
+		
 		
 		echo '</ul>';
 		
@@ -289,6 +289,8 @@ class chaturbate_Widget extends WP_Widget {
   
 }
 
-add_action('widgets_init', create_function('', 'return register_widget("chaturbate_Widget");'));
+add_action('widgets_init', function() {
+	return register_widget("chaturbate_Widget");
+});
 
 ?>

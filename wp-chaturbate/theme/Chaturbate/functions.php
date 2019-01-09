@@ -10,7 +10,6 @@
 		require_once( get_template_directory(). '/functions/theme-shortcodes.php' );			   	    	// This holds the shortcodes for the theme.
 		require_once( get_template_directory(). '/functions/theme-utilities.php' );							// Misc. utilities used throughout the theme.
 		require_once( get_template_directory(). '/functions/theme-search.php' );							// Controls the search bar.
-		require_once( get_template_directory(). '/functions/theme-shortcodes.php' );						// Shortcodes.
 		
 	// Required by wordpress, we don't use this. I just stuck it here so that the theme would pass the checks in that validation plugin.
 	
@@ -61,4 +60,13 @@
 		
 	add_action( 'after_setup_theme', 'nmp_setup' );
 		
+	// Add additional menu positions
+	
+	function register_meta_menu() {
+		
+		register_nav_menu('meta-menu',__( 'Meta Menu' ));
+		
+	}
+	
+	add_action( 'init', 'register_meta_menu' );
 ?>
